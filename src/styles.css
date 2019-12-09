@@ -28,6 +28,8 @@
   height: 220px;
   width: 300px;
   justify-self: center;
+  text-decoration: none;
+  color: black;
 }
 
 .blockHeader {
@@ -133,4 +135,56 @@ input[type="file"] {
   border-radius: 10px;
   margin: 20px auto;
   cursor: pointer;
+}
+
+.imageFlex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.image {
+  margin: 10px;
+  border: 2px solid #ffe65e;
+  border-radius: 5px;
+  padding: 0;
+  width: 280px;
+  height: 280px;
+}
+.photosHeading {
+  margin: 25px auto 25px auto;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+.grid-container {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto;
+  margin: 0 auto;
+  width: 100%;
+}
+.image2 {
+  border: 2px solid #ffe65e;
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  margin-top: 5px;
+}
+
+.imageUpload {
+  background: url("./Assets/Plus_button.png");
+  background-size: cover;
+  background-color: white;
+  border: 2px solid #ffe65e;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 280px;
+  width: 280px;
+  cursor: pointer;
+}
+.chart {
+  position: relative;
+  top: -30px;
+  width: 100%;
+  height: 100%;
 }

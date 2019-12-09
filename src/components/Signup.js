@@ -4,6 +4,11 @@ import { connect } from "react-redux";
 import { formSignUp as onSignUpSubmit } from "../actions";
 
 class Signup extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.fileInput = React.createRef();
+  }
   componentDidMount() {
     /* console.log(this.props); */
   }
@@ -40,8 +45,13 @@ class Signup extends React.Component {
   };
 
   onSubmit = formValues => {
-    console.log(formValues);
-    this.props.onSignUpSubmit(formValues); // Create this action
+    const fd = new FormData();
+    fd.append("username", formValues.username);
+    fd.append("email", formValues.email);
+    fd.append("password", formValues.password);
+    fd.append("image", this.fileInput.current.files[0]);
+    console.log(fd);
+    this.props.onSignUpSubmit(fd);
   };
 
   render() {
@@ -80,13 +90,18 @@ class Signup extends React.Component {
               placeholder="Confirm password"
             />
           </div>
-          {/* <Field
+          <label className="fileUpload" htmlFor="fileUpload">
+            <h3>Add Picture</h3>
+          </label>
+          <input
+            className="fileContainer"
             name="picture"
-            component={this.renderInput}
+            id="fileUpload"
             type="file"
             placeholder="Add picture"
             accept="image/*"
-          /> */}
+            ref={this.fileInput}
+          />
           <button className="registerButton"></button>
         </form>
       </div>

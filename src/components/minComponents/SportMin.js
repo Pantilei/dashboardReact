@@ -2,7 +2,11 @@ import React from "react";
 
 class SportMin extends React.Component {
   render() {
-    return <div>SportMin Page</div>;
+    return (
+      <div className="blockHeader">
+        <h1>Sport</h1>
+      </div>
+    );
   }
 }
 

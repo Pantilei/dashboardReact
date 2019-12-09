@@ -1,4 +1,4 @@
-const INITIAL_STATE = { userId: null, username: "" };
+const INITIAL_STATE = { userId: null, username: "", uploadedImages: [] };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {

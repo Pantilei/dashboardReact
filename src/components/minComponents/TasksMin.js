@@ -2,7 +2,11 @@ import React from "react";
 
 class TaskMin extends React.Component {
   render() {
-    return <div>TaskMin Page</div>;
+    return (
+      <div className="blockHeader">
+        <h1>Tasks</h1>
+      </div>
+    );
   }
 }
 
