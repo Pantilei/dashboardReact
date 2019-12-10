@@ -52,8 +52,9 @@ export const home = () => async dispatch => {
 };
 
 export const onImageSubmit = image => async dispatch => {
+  console.log("before Image submit");
   const response = await backend.post("/images", image);
-  //console.log(response.data);
+  console.log(response.data);
   dispatch({ type: "USER", payload: response.data });
 };
 
@@ -65,6 +66,14 @@ export const imageDownload = () => async dispatch => {
 };
 
 export const fetchData = () => {
+  /* const clothesTypes = [
+    "jumper",
+    "hoodie",
+    "jacket",
+    "sweater",
+    "blazer",
+    "raincoat"
+  ]; */
   const days = {};
   for (let value of chloteDATA.payload) {
     if (value.clothe === "jacket" && days["jacket"]) {
@@ -75,6 +84,10 @@ export const fetchData = () => {
       days["hoodie"]++;
     } else if (value.clothe === "jumper" && days["jumper"]) {
       days["jumper"]++;
+    } else if (value.clothe === "raincoat" && days["raincoat"]) {
+      days["raincoat"]++;
+    } else if (value.clothe === "blazer" && days["blazer"]) {
+      days["blazer"]++;
     } else if (value.clothe === "jacket" && !days["jacket"]) {
       days["jacket"] = 1;
     } else if (value.clothe === "sweater" && !days["sweater"]) {
@@ -83,6 +96,10 @@ export const fetchData = () => {
       days["hoodie"] = 1;
     } else if (value.clothe === "jumper" && !days["jumper"]) {
       days["jumper"] = 1;
+    } else if (value.clothe === "blazer" && !days["blazer"]) {
+      days["blazer"] = 1;
+    } else if (value.clothe === "raincoat" && !days["raincoat"]) {
+      days["raincoat"] = 1;
     }
   }
   const data = [
@@ -108,6 +125,18 @@ export const fetchData = () => {
       id: "jumper",
       label: "jumper",
       value: days.jumper,
+      color: "hsl(345, 70%, 50%)"
+    },
+    {
+      id: "blazer",
+      label: "blazer",
+      value: days.blazer,
+      color: "hsl(106, 70%, 50%)"
+    },
+    {
+      id: "raincoat",
+      label: "raincoat",
+      value: days.raincoat,
       color: "hsl(345, 70%, 50%)"
     }
   ];

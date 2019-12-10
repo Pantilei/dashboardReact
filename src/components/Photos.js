@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import HomeButton from "./HomeButton";
 import { onImageSubmit, imageDownload } from "../actions";
 
 class Photos extends React.Component {
@@ -43,6 +44,7 @@ class Photos extends React.Component {
   render() {
     return (
       <>
+        <HomeButton />
         <h1 className="photosHeading">Photos</h1>
         <div className="imageFlex">
           <label className="imageUpload" htmlFor="imageUpload"></label>

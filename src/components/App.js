@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import history from "../history";
 
 import Home from "./Home";
@@ -16,15 +16,13 @@ class App extends React.Component {
     return (
       <div className="main">
         <Router history={history}>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/signup" exact component={Signup} />
-            <Route path="/news" exact component={News} />
-            <Route path="/sport" exact component={Sport} />
-            <Route path="/photos" exact component={Photos} />
-            <Route path="/tasks" exact component={Tasks} />
-          </Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/signup" exact component={Signup} />
+          <Route path="/news" exact component={News} />
+          <Route path="/sport" exact component={Sport} />
+          <Route path="/photos" exact component={Photos} />
+          <Route path="/tasks" exact component={Tasks} />
         </Router>
       </div>
     );

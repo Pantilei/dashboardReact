@@ -13,6 +13,9 @@ import ChlotesMin from "./minComponents/ClothesMin";
 
 class Home extends React.Component {
   async componentDidMount() {
+    if (!localStorage.getItem("token")) {
+      history.push("/login");
+    }
     await this.props.home();
     if (!this.props.user.username) {
       history.push("/login");

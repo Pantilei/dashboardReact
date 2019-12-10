@@ -3,6 +3,7 @@ import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { formLogIn as onLogInSubmit } from "../actions";
 import { Link } from "react-router-dom";
+import HomeButton from "./HomeButton";
 
 class Login extends React.Component {
   renderInput = formProps => {
@@ -26,6 +27,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
+        <HomeButton />
         <h1 className="loginHeading">Hackathon</h1>
         <form
           className="form"
@@ -46,12 +48,12 @@ class Login extends React.Component {
             />
           </div>
           <button className="loginButton"></button>
-          <h3>
+          <h2>
             New to Hackathon?
             <span>
               <Link to="/signup">Sign Up</Link>
             </span>
-          </h3>
+          </h2>
         </form>
       </div>
     );

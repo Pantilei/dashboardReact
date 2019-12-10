@@ -3,8 +3,6 @@ import { fetchData } from "../../actions";
 import { connect } from "react-redux";
 import { ResponsivePie } from "@nivo/pie";
 
-import data from "./data";
-
 class ClotesMin extends React.Component {
   async componentDidMount() {
     await this.props.fetchData();
@@ -36,6 +34,9 @@ class ClotesMin extends React.Component {
             radialLabelsLinkHorizontalLength={24}
             radialLabelsLinkStrokeWidth={1}
             radialLabelsLinkColor={{ from: "color" }}
+            sliceLabel={function(e) {
+              return `${Math.round(e.value / 10)}%`;
+            }}
             slicesLabelsSkipAngle={10}
             slicesLabelsTextColor="#333333"
             animate={true}
@@ -83,6 +84,18 @@ class ClotesMin extends React.Component {
               {
                 match: {
                   id: "jumper"
+                },
+                id: "dots"
+              },
+              {
+                match: {
+                  id: "raincoat"
+                },
+                id: "dots"
+              },
+              {
+                match: {
+                  id: "blazer"
                 },
                 id: "dots"
               }

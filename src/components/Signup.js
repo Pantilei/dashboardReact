@@ -2,6 +2,7 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { formSignUp as onSignUpSubmit } from "../actions";
+import HomeButton from "./HomeButton";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class Signup extends React.Component {
   render() {
     return (
       <div>
+        <HomeButton />
         <h1 className="loginHeading">Hackathon</h1>
         <form
           className="form"
